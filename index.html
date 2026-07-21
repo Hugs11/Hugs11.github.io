@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hugs11 — Story Studio pour Lunii</title>
+    <meta
+      name="description"
+      content="Découvrez Story Studio pour Lunii, l'application Windows open source de Hugs11 pour créer, importer, tester et exporter des packs d'histoires."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="EW_r5pSDajA6Py5Z_duzkWnG2z-j_8UgUwk07VyOa4c" />
+    <meta name="theme-color" content="#111423" />
+    <link rel="canonical" href="https://hugs11.github.io/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Hugs11" />
+    <meta property="og:title" content="Hugs11 — Story Studio pour Lunii" />
+    <meta
+      property="og:description"
+      content="Une application Windows gratuite et open source pour créer, importer, tester et exporter des packs compatibles Lunii."
+    />
+    <meta property="og:url" content="https://hugs11.github.io/" />
+    <meta property="og:image" content="https://hugs11.github.io/story-studio/social-card.png" />
+    <meta property="og:image:alt" content="Story Studio pour Lunii" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hugs11 — Story Studio pour Lunii" />
+    <meta
+      name="twitter:description"
+      content="Application Windows gratuite et open source pour créer et tester des packs d'histoires compatibles Lunii."
+    />
+    <meta name="twitter:image" content="https://hugs11.github.io/story-studio/social-card.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": "https://hugs11.github.io/",
+        "name": "Hugs11 — Story Studio pour Lunii",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Hugs11",
+          "url": "https://github.com/Hugs11",
+          "sameAs": ["https://github.com/Hugs11"]
+        },
+        "about": {
+          "@type": "SoftwareApplication",
+          "name": "Story Studio",
+          "alternateName": "Story Studio pour Lunii",
+          "url": "https://hugs11.github.io/story-studio/",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "Windows",
+          "isAccessibleForFree": true
+        }
+      }
+    </script>
+
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #f8f7ff;
+        background: #0d0f19;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 80% 15%, rgba(133, 111, 222, 0.2), transparent 28rem),
+          radial-gradient(circle at 10% 90%, rgba(242, 145, 78, 0.14), transparent 30rem),
+          #0d0f19;
+      }
+
+      a { color: inherit; }
+
+      .page {
+        width: min(1100px, calc(100% - 2rem));
+        margin: 0 auto;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 0;
+      }
+
+      .brand {
+        font-size: 1.05rem;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+      }
+
+      .github-link {
+        color: #c9c4e7;
+        text-underline-offset: 0.25rem;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+        gap: clamp(2rem, 6vw, 5rem);
+        align-items: center;
+        min-height: calc(100vh - 9rem);
+        padding: 3rem 0 5rem;
+      }
+
+      .eyebrow {
+        margin: 0 0 0.8rem;
+        color: #f0a06c;
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 12ch;
+        font-size: clamp(2.8rem, 7vw, 5.7rem);
+        line-height: 0.96;
+        letter-spacing: -0.055em;
+      }
+
+      .intro {
+        max-width: 62ch;
+        margin: 1.5rem 0 0;
+        color: #c9c4d9;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        line-height: 1.7;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        min-height: 3rem;
+        padding: 0.75rem 1.1rem;
+        border: 1px solid #46425c;
+        border-radius: 0.8rem;
+        background: rgba(27, 28, 43, 0.72);
+        font-weight: 750;
+        text-decoration: none;
+        transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+      }
+
+      .button.primary {
+        border-color: #f09a62;
+        background: #e9864c;
+        color: #171019;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        transform: translateY(-2px);
+        border-color: #f0a06c;
+      }
+
+      .button:focus-visible,
+      .github-link:focus-visible,
+      .brand:focus-visible {
+        outline: 3px solid #9e8cec;
+        outline-offset: 4px;
+      }
+
+      .preview {
+        overflow: hidden;
+        border: 1px solid #3a374c;
+        border-radius: 1.4rem;
+        background: #161722;
+        box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.36);
+      }
+
+      .preview img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .preview p {
+        margin: 0;
+        padding: 1rem 1.2rem 1.2rem;
+        color: #aaa5c0;
+        line-height: 1.55;
+      }
+
+      footer {
+        padding: 0 0 2rem;
+        color: #8e899f;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 800px) {
+        main {
+          grid-template-columns: 1fr;
+          min-height: auto;
+          padding-top: 4rem;
+        }
+
+        h1 { max-width: 10ch; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .button { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <a class="brand" href="https://hugs11.github.io/">Hugs11</a>
+        <a class="github-link" href="https://github.com/Hugs11">Profil GitHub</a>
+      </header>
+
+      <main>
+        <section aria-labelledby="story-studio-title">
+          <p class="eyebrow">Application Windows gratuite et open source</p>
+          <h1 id="story-studio-title">Story Studio pour Lunii</h1>
+          <p class="intro">
+            Créez, importez, organisez et testez vos histoires dans un espace de travail visuel,
+            puis générez un pack compatible Lunii. L'audio, les images et les projets restent sur
+            votre ordinateur.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="https://hugs11.github.io/story-studio/">Découvrir Story Studio</a>
+            <a class="button" href="https://github.com/Hugs11/story-studio/releases/latest">Télécharger pour Windows</a>
+            <a class="button" href="https://github.com/Hugs11/story-studio">Voir le code source</a>
+          </div>
+        </section>
+
+        <aside class="preview" aria-label="Aperçu de Story Studio">
+          <a href="https://hugs11.github.io/story-studio/">
+            <img
+              src="https://hugs11.github.io/story-studio/social-card.png"
+              alt="Story Studio, éditeur de packs d'histoires pour Lunii"
+              width="1280"
+              height="640"
+            />
+          </a>
+          <p>Édition audio et d'images, voix, diagramme, simulateur et génération réunis dans une seule application.</p>
+        </aside>
+      </main>
+
+      <footer>Projet communautaire indépendant, sans affiliation avec Lunii.</footer>
+    </div>
+  </body>
+</html>
